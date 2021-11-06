@@ -4,8 +4,8 @@ class RegistrationsController < ActionController::Base
     end
 
     def create
-        # @user = Object.new(params[:user]) # NOT SECURE
-        @user = Object.new(user_params)
+        # @user = User.new(params[:user]) # NOT SECURE
+        @user = User.new(user_params)
         if @user.save
           flash[:success] = "User successfully created"
           session[:user_id] = @user.id
