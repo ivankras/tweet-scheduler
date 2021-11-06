@@ -8,6 +8,7 @@ class RegistrationsController < ActionController::Base
         @user = Object.new(user_params)
         if @user.save
           flash[:success] = "User successfully created"
+          session[:user_id] = @user.id
           redirect_to root_path
         #   redirect_to @user
         else
