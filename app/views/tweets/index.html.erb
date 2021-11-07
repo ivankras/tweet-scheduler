@@ -17,12 +17,4 @@
     %>
 <% end %>
 
-<% @tweets.each do |tweet| %>
-    <div class="d-flex align-items-center mb-4">
-        <div class="me-4">
-            <%= tweet.body %>
-        </div>
-
-        <%= button_to "Cancel", tweet, method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
-<% end %>
+<%= render @tweets %>
