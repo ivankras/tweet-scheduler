@@ -13,11 +13,11 @@ class TweetsController < ApplicationController
     def create
         @tweet = Current.user.tweets.create(tweet_params)
         if @tweet.save
-          flash[:success] = "Tweet successfully scheduled"
-          redirect_to tweets_path
+            flash[:success] = "Tweet successfully scheduled"
+            redirect_to tweets_path
         else
-          flash[:error] = "Something went wrong"
-          render 'new'
+            flash[:error] = "Something went wrong"
+            render 'new'
         end
     end
 
@@ -26,11 +26,11 @@ class TweetsController < ApplicationController
 
     def update
         if @tweet.update(tweet_params)
-          flash[:success] = "Tweet was successfully updated"
-          redirect_to tweets_path
+            flash[:success] = "Tweet was successfully updated"
+            redirect_to tweets_path
         else
-          flash[:error] = "Something went wrong"
-          render 'edit'
+            flash[:error] = "Something went wrong"
+            render 'edit'
         end
     end
     
