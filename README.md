@@ -1,24 +1,17 @@
-# README
+# Tweet Scheduler
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails applications for scheduling tweets to be posted
+Tutorial by Chris Oliver, on [gorails.com](https://github.com/excid3/scheduled_tweets)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+----
+## Set credentials
+(NOTE: update EDITOR for different text-processor)
+```rb
+$ EDITOR="code --wait" rails credentials:edit --environment=development
+```
+In the file that opens:
+```yml
+twitter:
+  api_key: TWITTER_API_KEY
+  api_secret: TWITTER_API_KEY_SECRET    
+```
