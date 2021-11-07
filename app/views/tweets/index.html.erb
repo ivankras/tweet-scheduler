@@ -1,0 +1,28 @@
+<div class="d-flex align-items-center justify-content-between">
+    <h1>Tweets</h1>
+    <% if Current.user.twitter_accounts.any? %>
+        <%=
+            link_to "Schedule a Tweet",
+            new_tweet_path,
+            class: "btn btn-primary"
+        %>
+    <% end %>
+</div>
+
+<% if Current.user.twitter_accounts.none? %>
+    <%=
+        link_to "Connect to a Twitter account",
+        "/auth/twitter",
+        class: "btn btn-primary"
+    %>
+<% end %>
+
+<% @tweets.each do |tweet| %>
+    <div class="d-flex align-items-center mb-4">
+        <div class="me-4">
+            <%= tweet.body %>
+        </div>
+
+        <%= button_to "Cancel", tweet, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+<% end %>
